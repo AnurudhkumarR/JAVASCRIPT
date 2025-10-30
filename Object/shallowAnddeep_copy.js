@@ -52,8 +52,8 @@
 // -------------------------------------
 // Deep Copy Methods
 // Method	Example	Notes
-// JSON.parse(JSON.stringify(obj))	✅ Easy but limited (no undefined, functions, or symbols)
-// structuredClone(obj)	✅ New built-in, supports complex data
+// JSON.parse(JSON.stringify(obj))	Easy but limited (no undefined, functions, or symbols)
+// structuredClone(obj)	 New built-in, supports complex data
 // Recursion	Write your own deep clone function
 // Lodash library	_.cloneDeep(obj)	Most reliable, widely used
 
@@ -73,7 +73,7 @@
 // Original: user = { name: "A", address: { city: "Delhi" } }
 
 // Shallow Copy  → shares same address object
-//    user.address === copy.address ✅ true
+//    user.address === copy.address  true
 
 // Deep Copy → independent address object
 //    user.address === copy.address  false
@@ -87,7 +87,7 @@
 //   address: { city: "Delhi", pin: 110001 }
 // });
 
-// // Wrong - mutates original state
+// //  Wrong - mutates original state
 // user.address.city = "Mumbai";
 
 // //  Correct - use deep copy
@@ -98,3 +98,13 @@
 
 //  This uses shallow copy at each level,
 // making sure React sees the change (immutability principle).
+// --------------------------------------
+
+// Summary Table
+// Feature	Shallow Copy	Deep Copy
+// Level	Top-level only	All nested levels
+// Nested Object	Reference copied	Cloned completely
+// Memory	Shared references	Independent
+// Performance	Faster	Slower
+// Common Methods	Spread (...), Object.assign()	structuredClone(), JSON.parse(JSON.stringify()), _.cloneDeep()
+// Used When	Only top-level changes	Complete isolation needed
