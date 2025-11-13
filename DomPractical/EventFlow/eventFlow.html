@@ -1,0 +1,33 @@
+<div id="outer" style="padding: 20px; background: lightblue">
+  Outer
+  <div id="inner" style="padding: 20px; background: lightgreen">
+    Inner
+    <button id="btn">Click Me</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById("outer").addEventListener("click", () => {
+    console.log("Outer Bubble");
+  });
+
+  document.getElementById("inner").addEventListener("click", () => {
+    console.log("Inner Bubble");
+  });
+
+  document.getElementById("outer").addEventListener(
+    "click",
+    () => {
+      console.log("Outer Capture");
+    },
+    true
+  );
+
+  document.getElementById("inner").addEventListener(
+    "click",
+    () => {
+      console.log("Inner Capture");
+    },
+    true
+  );
+</script>
